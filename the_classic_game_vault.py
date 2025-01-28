@@ -6,7 +6,7 @@ while True:
     print("2. Guess the Number")
     print("3. Quit")
 
-    user_choice = input("Choose a game (1-2): ")
+    user_choice = input("\nChoose a game (1-2): ")
     
     if user_choice == '1':
         # Play the Rock, Paper, Scissors game
@@ -16,8 +16,8 @@ while True:
         options = ["rock", "paper", "scissors"]
 
         # Welcome messages
-        print("Welcome to the Game of Rock-Paper-Scissors!")
-        print("Type 'rock', 'paper', or 'scissors' to play.")
+        print("\nWelcome to the Game of Rock-Paper-Scissors!")
+        print("\nType 'rock', 'paper', or 'scissors' to play.")
         print("Type 'q' to quit the game.")
 
         while True:
@@ -65,6 +65,23 @@ while True:
         number_to_guess = random.randint(1, 100)
         attempts = 0
 
-        print("Welcome to game of Guess the Number!")
-        print("I'm thinking of a number between 1 and 100.")
+        print("\nWelcome to the game of Guess the Number!")
+        print("\nI'm thinking of a number between 1 and 100.")
         print("What number must it be?")
+
+        while True:
+            user_guess = input("Enter your guess (or 'q' to quit): ")
+            if user_guess.lower() == 'q':
+                print("Goodbye!")
+                break
+
+            attempts += 1
+            user_guess = int(user_guess)
+
+            if user_guess < number_to_guess:
+                print("Too low! Try again.")
+            elif user_guess > number_to_guess:
+                print("Too high! Try again.")
+            else:
+                print(f"Congratulations! You've guessed the number {number_to_guess} in {attempts} attempts.")
+                break
