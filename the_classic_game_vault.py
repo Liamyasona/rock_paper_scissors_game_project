@@ -1,12 +1,17 @@
 import random
 
+# Initialize scores
+rock_paper_scissors_wins = 0
+guess_the_number_wins = 0
+
 while True:
     print("\nWelcome to the Classic Games!")
+    print("\nChoose what game you want to play!")
     print("1. Rock-Paper-Scissors")
     print("2. Guess the Number")
-    print("3. Quit")
+    print("3. *Quit Game*")
 
-    user_choice = input("\nChoose a game (1-2): ")
+    user_choice = input("\nChoose a game (1-2 or 3 to quit): ")
     
     if user_choice == '1':
         # Play the Rock, Paper, Scissors game
@@ -55,9 +60,9 @@ while True:
                 print("You lost!")
                 computer_wins += 1
 
-        print("You won!", user_wins, "times.")
+        print("\nYou won!", user_wins, "times.")
         print("The computer won!", computer_wins, "times.")
-        print("Goodbye!")
+        rock_paper_scissors_wins += user_wins  # Update the total wins for the scoreboard
         # testing
 
     elif user_choice == '2':
@@ -79,9 +84,22 @@ while True:
             user_guess = int(user_guess)
 
             if user_guess < number_to_guess:
-                print("Too low! Try again.")
+                print("\nToo low! Try again.")
             elif user_guess > number_to_guess:
-                print("Too high! Try again.")
+                print("\nToo high! Try again.")
             else:
-                print(f"Congratulations! You've guessed the number {number_to_guess} in {attempts} attempts.")
+                print(f"\nCongratulations! You've guessed the number {number_to_guess} in {attempts} attempts.")
+                guess_the_number_wins += 1  # Update total wins
                 break
+
+    elif user_choice == '3':
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+# Display scoreboard
+print("\n--- Scoreboard ---")
+print(f"Rock-Paper-Scissors Wins: {rock_paper_scissors_wins}")
+print(f"Guess the Number Wins: {guess_the_number_wins}")
+print("Good bye! See you next time!")        
