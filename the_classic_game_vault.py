@@ -1,3 +1,5 @@
+# The Classic Game Vault contains the classic "Rock, Paper, Scissors" game and the "Guess the Number" Game
+
 import random
 
 # Initialize scores
@@ -100,6 +102,7 @@ while True:
 
 # Display scoreboard
 print("\n--- Scoreboard ---")
-print(f"Rock-Paper-Scissors Wins: {rock_paper_scissors_wins}")
+print(f"\nRock-Paper-Scissors Wins: {rock_paper_scissors_wins}")
 print(f"Guess the Number Wins: {guess_the_number_wins}")
 print("Good bye! See you next time!")        
+print("Stay tune for more Classic Games in the Future!")
