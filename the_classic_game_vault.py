@@ -6,53 +6,65 @@ while True:
     print("2. Guess the Number")
     print("3. Quit")
 
-
-user_wins = 0
-computer_wins = 0
-
-options = ["rock", "paper", "scissors"]
-
-# Welcome messages
-print("Welcome to the Game of Rock-Paper-Scissors!")
-print("Type 'rock', 'paper', or 'scissors' to play.")
-print("Type 'q' to quit the game.")
-
-while True:
-    user_input = input("Your choice: ").lower()
-    if user_input == "q": 
-        break
-
-    if user_input not in options:
-        print("Invalid input. Please try again.")
-        continue
+    user_choice = input("Choose a game (1-2): ")
     
-    # Program picks their choice
-    random_number = random.randint(0, 2)
-    
-    # rock: 0, paper: 1, scissors: 2
-    computer_pick = options[random_number]
-    print("Computer picked", computer_pick + ".")
+    if user_choice == '1':
+        # Play the Rock, Paper, Scissors game
+        user_wins = 0
+        computer_wins = 0
 
-    if user_input == "rock" and computer_pick == "scissors":
-        print("You won!")
-        user_wins += 1
+        options = ["rock", "paper", "scissors"]
 
-    elif user_input == "paper" and computer_pick == "rock":
-        print("You won!")
-        user_wins += 1
+        # Welcome messages
+        print("Welcome to the Game of Rock-Paper-Scissors!")
+        print("Type 'rock', 'paper', or 'scissors' to play.")
+        print("Type 'q' to quit the game.")
 
-    elif user_input == "scissors" and computer_pick == "paper":
-        print("You won!")
-        user_wins += 1
+        while True:
+            user_input = input("Your choice: ").lower()
+            if user_input == "q": 
+                break
 
-    elif user_input == computer_pick:
-        print("It's a draw!")
+            if user_input not in options:
+                print("Invalid input. Please try again.")
+                continue
+            
+            # Program picks their choice
+            random_number = random.randint(0, 2)
+            
+            # rock: 0, paper: 1, scissors: 2
+            computer_pick = options[random_number]
+            print("Computer picked", computer_pick + ".")
 
-    else:
-        print("You lost!")
-        computer_wins += 1
+            if user_input == "rock" and computer_pick == "scissors":
+                print("You won!")
+                user_wins += 1
 
-print("You won!", user_wins, "times.")
-print("The computer won!", computer_wins, "times.")
-print("Goodbye!")
-# testing
+            elif user_input == "paper" and computer_pick == "rock":
+                print("You won!")
+                user_wins += 1
+
+            elif user_input == "scissors" and computer_pick == "paper":
+                print("You won!")
+                user_wins += 1
+
+            elif user_input == computer_pick:
+                print("It's a draw!")
+
+            else:
+                print("You lost!")
+                computer_wins += 1
+
+        print("You won!", user_wins, "times.")
+        print("The computer won!", computer_wins, "times.")
+        print("Goodbye!")
+        # testing
+
+    elif user_choice == '2':
+        # Play the Guess the Number Game
+        number_to_guess = random.randint(1, 100)
+        attempts = 0
+
+        print("Welcome to game of Guess the Number!")
+        print("I'm thinking of a number between 1 and 100.")
+        print("What number must it be?")
